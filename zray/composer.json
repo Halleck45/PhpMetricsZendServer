@@ -1,0 +1,15 @@
+{
+    "name": "halleck45/phpmetrics-zray-extension",
+    "description": "Display PhpMetrics informations in Z-Ray Debug bar",
+    "keywords": ["zendserver", "r-ray", "phpmetrics"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jean-François Lépine",
+            "homepage": "http://blog.lepine.pro"
+        }
+    ],
+    "require": {
+        "halleck45/phpmetrics": ">=1.2.0"
+    }
+}

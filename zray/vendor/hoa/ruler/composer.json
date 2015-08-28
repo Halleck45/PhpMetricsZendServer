@@ -1,0 +1,42 @@
+{
+    "name"       : "hoa/ruler",
+    "description": "The Hoa\\Ruler library.",
+    "type"       : "library",
+    "keywords"   : ["library", "ruler"],
+    "homepage"   : "http://hoa-project.net/",
+    "license"    : "BSD-3-Clause",
+    "authors"    : [
+        {
+            "name" : "Ivan Enderlin",
+            "email": "ivan.enderlin@hoa-project.net"
+        },
+        {
+            "name"    : "Hoa community",
+            "homepage": "http://hoa-project.net/"
+        }
+    ],
+    "support": {
+        "email" : "support@lists.hoa-project.net",
+        "irc"   : "irc://irc.freenode.org/hoaproject",
+        "source": "http://git.hoa-project.net/"
+    },
+    "require": {
+        "hoa/core"    : "~2.0",
+        "hoa/compiler": "~2.0",
+        "hoa/file"    : "~0.0",
+        "hoa/visitor" : "~1.0"
+    },
+    "require-dev": {
+        "hoa/test": "~1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Hoa\\Ruler\\": "."
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}

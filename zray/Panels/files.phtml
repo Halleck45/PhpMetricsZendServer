@@ -1,0 +1,99 @@
+<?php
+$tableParams = array(
+'tableId' 			=> 'zray-table-phpmetrics-files',
+'tableWidth'        => '5',
+);
+?>
+
+<?php echo $this->zrayTable($tableParams); //zrayTableHtml ?>
+
+<script type="text/javascript">
+    (function() {
+        var storage = zray.getStorage('files');
+        var maintable = zray.createTable(storage, jQuery('#<?php echo $tableParams['tableId']; ?>'));
+        maintable.setColumns([
+            {
+                "label": "filename",
+                "propertyName": "filename",
+                "sortable": true,
+                "width": '30%'
+            },
+            {
+                "label": "Maintainability",
+                "propertyName": "maintainability",
+                "sortable": true,
+                "width": '7%',
+                "getHtml": function(value) {
+                    if(value > 85) {
+                        return '<span style="background:#8BC34A; color: #FFF">' + value + '</span>';
+                    }
+                    if(value > 65) {
+                        return '<span style="background:#FFA000; color: #CCC">' + value + '</span>';
+                    }
+                    return '<span style="background:#F44336; color: #FFF">' + value + '</span>';
+                }
+            },
+            {
+                "label": "Comment weight",
+                "propertyName": "commentWeight",
+                "sortable": true,
+                "width": '7%'
+            },
+            {
+                "label": "Complexity",
+                "propertyName": "complexity",
+                "sortable": true,
+                "width": '7%'
+            },
+            {
+                "label": "Lines",
+                "propertyName": "loc",
+                "sortable": true,
+                "width": '7%'
+            },
+            {
+                "label": "Logical lines",
+                "propertyName": "lloc",
+                "sortable": true,
+                "width": '7%'
+            },
+            {
+                "label": "Comment lines",
+                "propertyName": "cloc",
+                "sortable": false,
+                "width": '7%'
+            },
+            {
+                "label": "Bugs",
+                "propertyName": "bugs",
+                "sortable": false,
+                "width": '7%'
+            },
+            {
+                "label": "Difficulty",
+                "propertyName": "difficulty",
+                "sortable": false,
+                "width": '7%'
+            },
+            {
+                "label": "Intelligent content",
+                "propertyName": "intelligentContent",
+                "sortable": false,
+                "width": '7%'
+            },
+            {
+                "label": "Vocabulary",
+                "propertyName": "vocabulary",
+                "sortable": false,
+                "width": '7%'
+            }
+        ]);
+        // create main table - end
+        // create pager and search
+        zray.createPager(storage, jQuery('#<?php echo $params['pagerId']; ?>'));
+        zray.createSearch(storage, jQuery('#<?php echo $params['searchId']; ?>'), maintable);
+        zray.registerDataHandler('phpmetrics', 'files', function(extensionData, requestData) {
+            storage.setData(extensionData);
+        });
+    })();
+</script

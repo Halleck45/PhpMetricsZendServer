@@ -1,0 +1,10 @@
+.idea
+/vendor/
+composer.lock
+/report/bubbles/results.json
+Vagrantfile
+provision.sh
+.vagrant
+Makefile
+/nbproject
+phpmetrics.yml.dist
